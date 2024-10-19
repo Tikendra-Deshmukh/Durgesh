@@ -6,6 +6,7 @@ let emojiNames = Array.from({length: 30}, (_, i) => i + 1);
 let emojiDict = {};
 let currentSlide = 0;
 let responses = [];
+const totalSlides = 5; // Total number of slides
 
 document.getElementById('startButton').addEventListener('click', startGame);
 
@@ -24,6 +25,12 @@ askQuestion();
 function askQuestion() {
 const questionText = `Kya aapka emoji Slide ${currentSlide} me hai?`;
 document.getElementById('question').innerText = questionText;
+document.getElementById('emojiDisplay').innerText = `Slide ${currentSlide}: ${getSlideEmojis(currentSlide).join(' ')}`;
+}
+
+// Function to get emojis for a specific slide based on their secret name
+function getSlideEmojis(slideIndex) {
+return emojis.filter(emoji => emojiDict[emoji] === slideIndex);
 }
 
 // Attach event listeners to response buttons
@@ -32,7 +39,7 @@ button.addEventListener('click', function() {
 responses.push(this.getAttribute('data-response'));
 currentSlide++;
 
-if (currentSlide <= 5) {
+if (currentSlide <= totalSlides) {
 askQuestion();
 } else {
 showResult();
