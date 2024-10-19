@@ -26,6 +26,7 @@ const questionText = `Kya aapka emoji Slide ${currentSlide} me hai?`;
 document.getElementById('question').innerText = questionText;
 }
 
+// Attach event listeners to response buttons
 document.querySelectorAll('.response-button').forEach(button => {
 button.addEventListener('click', function() {
 responses.push(this.getAttribute('data-response'));
