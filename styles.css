@@ -1,66 +1,38 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background-color: #333;
-    padding: 1rem 0;
-  }
-  
-  nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin: 0 1rem;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  section {
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 800px;
-    background-color: #fff;
-    border-radius: 5px;
-  }
-  
-  h1, h2 {
-    color: #333;
-  }
-  
-  footer {
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-  
-  button {
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem 1rem;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-display {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.response-button {
+    margin: 5px;
+    padding: 10px 20px;
     border: none;
+    background-color: #28a745;
+    color: white;
     cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
+}
+
+.response-button:hover {
+    background-color: #218838;
+}
