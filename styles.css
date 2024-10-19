@@ -1,36 +1,70 @@
+/* General Page Layout */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
-.container {
+#game-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-#emoji-container {
-    font-size: 24px;
-    margin: 20px;
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-#slide {
-    font-size: 30px;
-    margin: 20px;
-    display: none;
-}
-
+/* Buttons */
 button {
-    margin-top: 20px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+button:hover {
+    background-color: #45a049;
 }
+
+#next-slide, #yes-btn, #no-btn, #start-game, #play-again {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+}
+
+/* Emoji Grid */
+#emoji-container, #emoji-set {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#emoji-container span, #emoji-set span {
+    font-size: 2rem;
+    padding: 10px;
+}
+
+/* Final Guess */
+#final-guess {
+    margin-top: 30px;
+    font-size: 1.
