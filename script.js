@@ -15,6 +15,7 @@ document.getElementById('emojiDisplay').innerText = emojis.join(' ');
 document.getElementById('responseContainer').classList.add('hidden');
 document.getElementById('result').classList.add('hidden');
 document.getElementById('startButton').classList.add('hidden'); // Hide the start button
+document.getElementById('gameContainer').classList.remove('hidden'); // Show the game container
 askQuestion();
 }
 
@@ -65,6 +66,7 @@ document.getElementById('result').innerText = `Aapne socha hua emoji hai: ${gues
 document.getElementById('responseContainer').classList.add('hidden');
 document.getElementById('result').classList.remove('hidden');
 document.getElementById('startButton').classList.remove('hidden'); // Show the start button again
+document.getElementById('gameContainer').classList.add('hidden'); // Hide game container
 }
 
 // Utility function to shuffle an array

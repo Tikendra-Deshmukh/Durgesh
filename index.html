@@ -10,12 +10,16 @@
     <div class="container">
         <h1>Emoji Guessing Game</h1>
         <button id="startButton">Start Game</button>
-        <div id="question" class="hidden"></div>
-        <div id="emojiDisplay" class="emoji-display"></div>
-        <div id="responseContainer" class="hidden">
-            <button class="response-button" data-response="yes">Yes</button>
-            <button class="response-button" data-response="no">No</button>
+        
+        <div id="gameContainer" class="hidden">
+            <div id="question" class="question"></div>
+            <div id="emojiDisplay" class="emoji-display"></div>
+            <div id="responseContainer" class="hidden">
+                <button class="response-button" data-response="yes">Yes</button>
+                <button class="response-button" data-response="no">No</button>
+            </div>
         </div>
+        
         <div id="result" class="hidden"></div>
     </div>
     <script src="script.js"></script>
