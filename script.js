@@ -39,7 +39,8 @@ function nextSlide() {
             chosenEmojiPresent = true; // Mark it as present
         }
 
-        document.getElementById('slide').innerText = `Slide ${slideName}: ${slideEmojis.join(' ')}`;
+        // Display only the emojis (not the slide name)
+        document.getElementById('slide').innerText = `${slideEmojis.join(' ')}`;
         document.getElementById('slide').style.display = 'block';
         document.getElementById('response-container').style.display = 'none';
         currentSlideIndex++;
