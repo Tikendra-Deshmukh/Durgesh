@@ -1,9 +1,8 @@
-/* General Page Layout */
+/* General Layout */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,23 +10,23 @@ body {
 }
 
 #game-container {
-    width: 100%;
-    max-width: 600px;
-    background-color: white;
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-width: 600px;
+    width: 100%;
 }
 
-/* Heading */
+/* Headings */
 h1 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Buttons */
+/* Button Styling */
 button {
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -36,18 +35,15 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-#next-slide, #yes-btn, #no-btn, #start-game, #play-again {
-    display: block;
-    margin: 10px auto;
-    width: 50%;
+.hidden {
+    display: none;
 }
 
 /* Emoji Grid */
@@ -56,15 +52,9 @@ button:hover {
     grid-template-columns: repeat(6, 1fr);
     gap: 15px;
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 #emoji-container span, #emoji-set span {
     font-size: 2rem;
-    padding: 10px;
 }
-
-/* Final Guess */
-#final-guess {
-    margin-top: 30px;
-    font-size: 1.

@@ -1,34 +1,44 @@
-<div id="game-container" style="text-align: center;">
-    <h1>Emoji Guessing Game</h1>
-  
-    <!-- Start Game Screen -->
-    <div id="start-screen">
-      <p>Click "Start Game" to begin!</p>
-      <button id="start-game">Start Game</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>Emoji Guessing Game</h1>
+
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <p>Think of one emoji in your mind, and let's guess it!</p>
+            <button id="start-game">Start Game</button>
+        </div>
+
+        <!-- Emoji Selection Screen -->
+        <div id="emoji-selection" class="hidden">
+            <p>Select an emoji from the list below (but just in your mind, don't click it):</p>
+            <div id="emoji-container"></div>
+            <button id="proceed">Proceed</button>
+        </div>
+
+        <!-- Slide with Question -->
+        <div id="slide" class="hidden">
+            <p>Is your emoji in this set?</p>
+            <div id="emoji-set"></div>
+            <button id="yes-btn">Yes</button>
+            <button id="no-btn">No</button>
+        </div>
+
+        <!-- Final Guess -->
+        <div id="final-guess" class="hidden">
+            <p>Your emoji is: <span id="guessed-emoji"></span>!</p>
+            <button id="restart">Play Again</button>
+        </div>
     </div>
-  
-    <!-- Emoji Selection Screen -->
-    <div id="emoji-selection" style="display: none;">
-      <p>Think of one emoji from the list below!</p>
-      <div id="emoji-container">
-        <!-- 30 emojis will be displayed here dynamically -->
-      </div>
-      <button id="start-quiz">Proceed</button>
-    </div>
-  
-    <!-- Slide Display (Random Emoji Sets) -->
-    <div id="slide" style="display: none;">
-      <p>Is your emoji in this set?</p>
-      <div id="emoji-set">
-        <!-- Random set of emojis will be displayed here -->
-      </div>
-      <button id="yes-btn">Yes</button>
-      <button id="no-btn">No</button>
-    </div>
-  
-    <!-- Final Guess Slide -->
-    <div id="final-guess" style="display: none;">
-      <p>The emoji you chose in your mind is: <span id="chosen-emoji"></span>!</p>
-      <button id="play-again">Play Again</button>
-    </div>
-  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
