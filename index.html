@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Emoji Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Emoji Guessing Game</h1>
-        <button id="startButton">Start Game</button>
-        
-        <div id="gameContainer" class="hidden">
-            <div id="question" class="question"></div>
-            <div id="emojiDisplay" class="emoji-display"></div>
-            <div id="responseContainer" class="hidden">
-                <button class="response-button" data-response="yes">Yes</button>
-                <button class="response-button" data-response="no">No</button>
-            </div>
+        <div id="emoji-container"></div>
+        <button id="start-game">Start Game</button>
+        <div id="slide"></div>
+        <div id="response-container" style="display:none;">
+            <p id="response"></p>
+            <button id="next-slide">Next Slide</button>
         </div>
-        
-        <div id="result" class="hidden"></div>
     </div>
     <script src="script.js"></script>
 </body>
