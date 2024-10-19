@@ -2,8 +2,6 @@ const emojis = ['⭐', '🏆', '🎈', '🫧', '💖', '🍎', '🥭', '🪔', '
     '💰', '💎', '👑', '📚', '🕉️', '🎶', '🚩', '✏️', '🪶', '❄️', 
     '😎', '🤡', '🧊', '🔥', '🌼', '🎁', '☠️', '🐍', '🤫', '🤯'];
 
-let emojiNames = Array.from({length: 30}, (_, i) => i + 1);
-let emojiDict = {};
 let currentSlide = 0;
 let responses = [];
 const totalSlides = 5; // Total number of slides
@@ -12,46 +10,40 @@ document.getElementById('startButton').addEventListener('click', startGame);
 
 function startGame() {
 shuffle(emojis);
-shuffle(emojiNames);
-emojiDict = Object.fromEntries(emojis.map((emoji, index) => [emoji, emojiNames[index]]));
 currentSlide = 0;
 responses = [];
 document.getElementById('emojiDisplay').innerText = emojis.join(' ');
 document.getElementById('responseContainer').classList.add('hidden');
 document.getElementById('result').classList.add('hidden');
-document.getElementById('nextButton').classList.remove('hidden');
+document.getElementById('startButton').classList.add('hidden');
+askQuestion();
 }
 
-document.getElementById('nextButton').addEventListener('click', showNextSlide);
-
-function showNextSlide() {
-currentSlide++;
-if (currentSlide <= totalSlides) {
-askQuestion();
+function askQuestion() {
+if (currentSlide < totalSlides) {
+const questionText = `Kya aapka emoji Slide ${currentSlide + 1} me hai?`;
+document.getElementById('question').innerText = questionText;
+document.getElementById('emojiDisplay').innerText = `Slide ${currentSlide + 1}: ${getSlideEmojis(currentSlide + 1).join(' ')}`;
+document.getElementById('responseContainer').classList.remove('hidden');
 } else {
 showResult();
 }
 }
 
-function askQuestion() {
-const questionText = `Kya aapka emoji Slide ${currentSlide} me hai?`;
-document.getElementById('question').innerText = questionText;
-document.getElementById('emojiDisplay').innerText = `Slide ${currentSlide}: ${getSlideEmojis(currentSlide).join(' ')}`;
-
-// Show response buttons
-document.getElementById('responseContainer').classList.remove('hidden');
-}
-
+// Function to simulate which emojis are on which slide
 function getSlideEmojis(slideIndex) {
-// Dummy data for slides - here we just return all emojis for simplicity
-return emojis;  // Modify this to show specific emojis for the current slide if needed
+// For demonstration, we can return a random subset of emojis
+const slideEmojis = emojis.slice(0, 6); // Replace this with your logic for slides
+return slideEmojis; 
 }
 
 // Attach event listeners to response buttons
 document.querySelectorAll('.response-button').forEach(button => {
 button.addEventListener('click', function() {
-responses[currentSlide - 1] = this.getAttribute('data-response');
+responses[currentSlide] = this.getAttribute('data-response');
+currentSlide++;
 document.getElementById('responseContainer').classList.add('hidden'); // Hide the response buttons
+askQuestion(); // Ask the next question
 });
 });
 
@@ -59,14 +51,14 @@ function showResult() {
 const binaryResponse = responses.map(r => (r === 'yes' ? '1' : '0')).join('');
 const decimalValue = parseInt(binaryResponse, 2);
 
-if (decimalValue > 0 && decimalValue <= 30) {
-const guessedEmoji = Object.keys(emojiDict).find(emoji => emojiDict[emoji] === decimalValue);
+const guessedEmoji = emojis[decimalValue]; // Assume we have a straightforward mapping for demo purposes
+if (guessedEmoji) {
 document.getElementById('result').innerText = `Aapne socha hua emoji hai: ${guessedEmoji}`;
 } else {
 document.getElementById('result').innerText = "Kuch galat hua, aapka emoji nahi mila.";
 }
 
-document.getElementById('nextButton').classList.add('hidden');
+document.getElementById('responseContainer').classList.add('hidden');
 document.getElementById('result').classList.remove('hidden');
 }
 
